@@ -3,12 +3,14 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
 var del = require('del');
  
 var paths = {
   scripts: ['src/js/**/*.js', '!client/external/**/*.js'],
   images: 'src/img/**/*',
-  html: 'src/*.html'
+  html: 'src/*.html',
+  sass: './src/sass/**/*.scss'
 };
  
 // Not all tasks need to use streams
@@ -46,6 +48,12 @@ gulp.task('html', [], function() {
   .pipe(gulp.dest('./build'));
 });
 
+gulp.task('sass', [], function () {
+  return gulp.src(paths.sass)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./build/css'));
+});
+
 // Rerun the task when a file changes 
 gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
@@ -54,4 +62,4 @@ gulp.task('watch', function() {
 });
  
 // The default task (called when you run `gulp` from cli) 
-gulp.task('default', ['watch', 'scripts', 'images', 'html']);
+gulp.task('default', ['watch', 'scripts', 'images', 'sass', 'html']);
