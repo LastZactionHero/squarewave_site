@@ -1,3 +1,129 @@
-body {
-  background-color: red;
+$color_a: #FE4A49;
+$color_b: #2AB7CA;
+$color_c: #FED766;
+$color_d: #E6E6EA;
+$color_white: #F4F4F8;
+$color_dark: #29292B;
+
+.splash {
+  position: relative;
+  height: 600px;
+  background-image: url("splash_printer.png");
+  border-bottom: 40px solid $color_c;
+
+  .splash-overlay {
+    position: absolute;
+    opacity: 0.5;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: $color_b;
+  }
+
+  .splash-hero {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    padding: 64px 12px;
+    color: $color_white;
+
+    @media only screen and (min-width : 769px) {
+      h1 {
+        font-size: 6em;
+      }
+    }
+
+
+    text-align: center;
+    h1 {
+      font-family: 'PT Mono', monospace;
+      font-weight: lighter;
+    }
+    .tagline {
+      font-size: 2em;
+      font-weight: lighter;
+    }
+  }
+}
+
+.container-services {
+  background-color: $color_d;
+  padding: 24px 0px;
+
+  .row-services {
+    .service {
+      padding: 48px 24px;
+
+      .title {
+        font-weight: bold;
+        font-size: 1.6em;
+        border-bottom: 1px solid $color_c;
+      }
+      .description {
+      }
+    }
+  }
+}
+
+.container-lead {
+  background-color: $color_a;
+  padding: 24px 0px;
+
+  .lead {
+    padding: 64px;
+    font-size: 2em;
+    font-weight: lighter;
+    color: $color_white;
+  }
+  border-bottom: 40px solid $color_c;
+}
+
+.container-tags {
+  background-color: $color_b;
+  color: $color-white;
+  padding: 48px 0px;
+
+  .tag {
+    padding: 48px;
+
+    .title {
+      font-size: 2em;
+      font-weight: lighter;
+      margin-bottom: 12px;
+      border-bottom: 1px solid $color_c;
+    }
+    .description {
+      font-size: 1em;
+    }
+  }
+}
+
+.container-contact {
+  background-color: $color_dark;
+  color: $color_white;
+  padding: 48px 0px;
+
+  h2 {
+    border-bottom: 1px solid $color_d;
+  }
+  h2,h4 {
+    font-weight: lighter;
+  }
+  h4 {
+    margin-top: 24px;
+  }
+  label {
+    font-weight: normal;
+  }
+  a {
+    color: $color_white;
+  }
+}
+
+.container-footer {
+  background-color: $color_dark;
+  color: $color_d;
+  padding: 24px 0px 64px 0px;
 }

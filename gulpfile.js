@@ -17,7 +17,7 @@ var paths = {
 // A gulpfile is just another node program and you can use any package available on npm
 gulp.task('clean', function() {
   // You can use multiple globbing patterns as you would with `gulp.src`
-  return del(['build']);
+  // return del(['build']);
 });
  
 gulp.task('scripts', ['clean'], function() {
@@ -36,7 +36,7 @@ gulp.task('images', ['clean'], function() {
   return gulp.src(paths.images)
     // Pass in options to the task 
     .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('build/css'));
 });
 
 // Copy all static html
@@ -59,6 +59,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.html, ['html']);
+  gulp.watch(paths.sass, ['sass']);
 });
  
 // The default task (called when you run `gulp` from cli) 
