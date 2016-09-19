@@ -8,7 +8,7 @@ $color_dark: #29292B;
 .splash {
   position: relative;
   height: 600px;
-  background-image: url("/images/splash_printer.png");
+  background-image: url("./splash_printer.png");
   border-bottom: 40px solid $color_c;
 
   .splash-overlay {
