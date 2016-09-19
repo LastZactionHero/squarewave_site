@@ -1,6 +1,8 @@
 require('normalize.css/normalize.css');
+require('styles/font-awesome.css');
 require('styles/app.scss');
 require('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
 
 window.jQuery = require('jquery');
 require('bootstrap');
