@@ -1,5 +1,9 @@
 require('normalize.css/normalize.css');
 require('styles/app.scss');
+require('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+window.jQuery = require('jquery');
+require('bootstrap');
 
 import React from 'react';
 
@@ -8,7 +12,7 @@ let yeomanImage = require('../images/yeoman.png');
 class AppComponent extends React.Component {
   render() {
     return (
-      <div>
+      <div className='container-fluid'>
         <div className="splash">
           <div className="splash-overlay" />
           <div className="splash-hero">
@@ -97,7 +101,7 @@ class AppComponent extends React.Component {
               <div className="col-md-6">
                 <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
                 <h4>Email Us Directly:</h4>
-                <p><a mailto="info@squarewaveng.com">info@squarewaveng.com</a></p>
+                <p>info@squarewaveng.com</p>
                 <h4>Call Us:</h4>
                 <p>317-496-8472</p>
               </div>
