@@ -5,6 +5,10 @@ $color_d: #E6E6EA;
 $color_white: #F4F4F8;
 $color_dark: #29292B;
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .splash {
   position: relative;
   height: 600px;
@@ -38,12 +42,13 @@ $color_dark: #29292B;
 
     text-align: center;
     h1 {
-      font-family: 'PT Mono', monospace;
-      font-weight: lighter;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
     }
     .tagline {
-      font-size: 2em;
-      font-weight: lighter;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.6em;
+      font-weight: 100;
     }
   }
 }
