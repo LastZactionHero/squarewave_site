@@ -7,6 +7,7 @@ window.jQuery = require('jquery');
 require('bootstrap');
 
 import React from 'react';
+import ContactForm from './ContactForm';
 
 let yeomanImage = require('../images/yeoman.png');
 
@@ -101,6 +102,9 @@ class AppComponent extends React.Component {
             <div className="row">
               <div className="col-md-6">
                 <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
+                <ContactForm></ContactForm>
+              </div>
+              <div className="col-md-6">
                 <h4>Email Us Directly:</h4>
                 <p>info@squarewaveng.com</p>
                 <h4>Call Us:</h4>
