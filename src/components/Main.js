@@ -14,7 +14,7 @@ let yeomanImage = require('../images/yeoman.png');
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className='container-fluid'>
+      <div>
         <div className="splash">
           <div className="splash-overlay" />
           <div className="splash-hero">
