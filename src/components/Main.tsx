@@ -1,17 +1,7 @@
-require('normalize.css/normalize.css');
-require('styles/font-awesome.css');
-require('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
-require('styles/app.scss');
+import * as React from 'react';
+import { ContactForm } from './ContactForm.tsx';
 
-window.jQuery = require('jquery');
-require('bootstrap');
-
-import React from 'react';
-import ContactForm from './ContactForm';
-
-let yeomanImage = require('../images/yeoman.png');
-
-class AppComponent extends React.Component {
+export class Main extends React.Component<{}, {}> {
   render() {
     return (
       <div>
@@ -120,7 +110,4 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+// export class AppComponent;
