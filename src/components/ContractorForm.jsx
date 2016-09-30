@@ -119,7 +119,7 @@ class ContractorForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <div>
         {this.state.sentAlert ? <div className='alert alert-success'>Thanks! We&apos;ll be in touch soon!</div> : null}
         <div className="form-group">
           <label htmlFor="email">Email address</label>
@@ -178,7 +178,7 @@ class ContractorForm extends React.Component {
           <SkillSelector></SkillSelector>
         </div>
         <button type="submit" className="btn btn-default" onClick={this.submit}>Contact Us</button>
-      </form>
+      </div>
     )
   }
 }

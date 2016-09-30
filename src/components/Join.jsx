@@ -5,6 +5,23 @@ class Join extends React.Component<> {
   render() {
     return (
       <div>
+        <div className="container-fluid container-contact">
+          <div className="container">
+            <h2>Contact Us</h2>
+            <div className="row">
+              <div className="col-md-6">
+                <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
+                <ContractorForm></ContractorForm>
+              </div>
+              <div className="col-md-6">
+                <h4>Email Us Directly:</h4>
+                <p>info@squarewaveng.com</p>
+                <h4>Call Us:</h4>
+                <p>317-496-8472</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="splash">
           <div className="splash-overlay" />
           <div className="splash-hero">
@@ -82,23 +99,6 @@ class Join extends React.Component<> {
                 <div className="description">
                   We&apos;re focused on building products and tools for Colorado companies, and we do it with a local team of experts.
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid container-contact">
-          <div className="container">
-            <h2>Contact Us</h2>
-            <div className="row">
-              <div className="col-md-6">
-                <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
-                <ContractorForm></ContractorForm>
-              </div>
-              <div className="col-md-6">
-                <h4>Email Us Directly:</h4>
-                <p>info@squarewaveng.com</p>
-                <h4>Call Us:</h4>
-                <p>317-496-8472</p>
               </div>
             </div>
           </div>

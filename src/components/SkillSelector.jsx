@@ -6,6 +6,7 @@ class SkillSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedSkills: [],
       skills: [],
       suggestions: [],
       newSkill: ''
@@ -64,9 +65,24 @@ class SkillSelector extends React.Component {
   }
 
   handleNewSkillChange = (event, { newValue }) => {
-    this.setState({
-      newSkill: newValue
-    });
+    this.setState({newSkill: newValue});
+    if(event.type == 'click')
+      this.addSkillToSelectedList();
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.addSkillToSelectedList();
+  }
+
+  addSkillToSelectedList = () => {
+    let existingSkill = this.state.skills.find(s => s.name == this.state.newSkill);
+    if(existingSkill){
+      this.setState({selectedSkills: this.state.selectedSkills.push(existingSkill)})
+    } else {
+      console.log("gotta create a new skill!")
+    }
+    this.setState({newSkill: ''});
   }
 
   render() {
@@ -79,7 +95,7 @@ class SkillSelector extends React.Component {
     };
 
     return(
-      <div className='row'>
+      <form className='row' onSubmit={this.handleSubmit}>
         <div className='col-xs-11'>
           <AutoSuggest
             suggestions={this.state.suggestions}
@@ -92,7 +108,7 @@ class SkillSelector extends React.Component {
           <div className='col-xs-1'>
             <a href='javascript:void(0)'><i className="fa fa-plus-circle" aria-hidden="true"></i></a>
           </div>
-      </div>
+      </form>
     )
   }
 }

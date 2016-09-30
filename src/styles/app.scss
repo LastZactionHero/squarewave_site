@@ -126,3 +126,15 @@ body {
   color: $color_d;
   padding: 24px 0px 64px 0px;
 }
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  
+  li {
+    background-color: $color-white;
+    color: $color_dark;
+    padding: 5px 20px;
+  }
+}
