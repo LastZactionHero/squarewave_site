@@ -1,9 +1,8 @@
-import * as React from 'react';
-import * as $ from 'jquery';
+import React from 'react';
+import $ from 'jquery';
 
-// interface ContactFormState {email: string, name: string, phone: string, message: string, sentAlert: boolean};
-export class ContactForm extends React.Component<{}, any> {
-  constructor(props: any) {
+class ContactForm extends React.Component<> {
+  constructor(props) {
     super(props);
     this.state = {
       email: '',
@@ -14,7 +13,7 @@ export class ContactForm extends React.Component<{}, any> {
     };
   }
 
-  submit = (event: any) => {
+  submit = (event) => {
     event.preventDefault();
     $.ajax({
       method: 'POST',
@@ -33,19 +32,19 @@ export class ContactForm extends React.Component<{}, any> {
     )
   }
 
-  handleEmailChange = (event: any) => {
+  handleEmailChange = (event) => {
     this.setState({email: event.target.value});
   }
 
-  handleNameChange = (event: any) => {
+  handleNameChange = (event) => {
     this.setState({name: event.target.value});
   }
 
-  handlePhoneChange = (event: any) => {
+  handlePhoneChange = (event) => {
     this.setState({phone: event.target.value});
   }
 
-  handleMessageChange = (event: any) => {
+  handleMessageChange = (event) => {
     this.setState({message: event.target.value});
   }
 
@@ -74,3 +73,5 @@ export class ContactForm extends React.Component<{}, any> {
     )
   }
 }
+
+export default ContactForm;

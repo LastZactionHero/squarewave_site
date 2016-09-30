@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { ContactForm } from './ContactForm.tsx';
+import React from 'react';
+import ContactForm from './ContactForm';
 
-export class Main extends React.Component<{}, {}> {
+class Main extends React.Component<> {
   render() {
     return (
       <div>
@@ -110,4 +110,4 @@ export class Main extends React.Component<{}, {}> {
   }
 }
 
-// export class AppComponent;
+export default Main;

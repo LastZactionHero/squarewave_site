@@ -9,7 +9,7 @@ require('bootstrap');
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Main} from './components/Main.tsx';
+import Main from './components/Main';
 
 
 // Render the main component into the dom
