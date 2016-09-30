@@ -1,15 +1,55 @@
 import React from 'react';
 import $ from 'jquery';
-// import AutoSuggest from "react-autosuggest";
+import AutoSuggest from 'react-autosuggest';
 
 class SkillSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       skills: [],
+      suggestions: [],
       newSkill: ''
     }
   }
+
+  // Teach Autosuggest how to calculate suggestions for any given input value.
+  getSuggestions = (value) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    return inputLength === 0 ? [] : this.state.skills.filter(skill =>
+      skill.name.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  }
+
+  // When suggestion is clicked, Autosuggest needs to populate the input field
+  // based on the clicked suggestion. Teach Autosuggest how to calculate the
+  // input value for every given suggestion.
+  getSuggestionValue = (skill) => {
+    return skill.name;
+  }
+
+  // Use your imagination to render suggestions.
+  renderSuggestion = (skill) => {
+    return(
+      <span>{skill.name}</span>
+    )
+  }
+
+  // Autosuggest will call this function every time you need to clear suggestions.
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
+  // Autosuggest will call this function every time you need to update suggestions.
+  // You already implemented this logic above, so just use it.
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  };
+
 
   componentDidMount = () => {
     $.ajax({
@@ -23,20 +63,35 @@ class SkillSelector extends React.Component {
     );
   }
 
-  handleNewSkillChange = (event) => {
-    this.setState({newSkill: event.target.value});
+  handleNewSkillChange = (event, { newValue }) => {
+    this.setState({
+      newSkill: newValue
+    });
   }
 
   render() {
-    let skillRows = this.state.skills.map(function(skill){
-      return <li key={skill.id}>{skill.name}</li>
-    });
+    // Autosuggest will pass through all these props to the input field.
+    const inputProps = {
+      placeholder: 'Skill',
+      value: this.state.newSkill,
+      onChange: this.handleNewSkillChange,
+      className: 'form-control'
+    };
 
     return(
-      <div>
-        <ul>{skillRows}</ul>
-        <input type="text" className="form-control" id="website" placeholder="" value={this.state.newSkill} onChange={this.handleNewSkillChange} />
-        <a href='javascript:void(0)'><i className="fa fa-plus-circle" aria-hidden="true"></i></a>
+      <div className='row'>
+        <div className='col-xs-11'>
+          <AutoSuggest
+            suggestions={this.state.suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={this.getSuggestionValue}
+            renderSuggestion={this.renderSuggestion}
+            inputProps={inputProps} />
+          </div>
+          <div className='col-xs-1'>
+            <a href='javascript:void(0)'><i className="fa fa-plus-circle" aria-hidden="true"></i></a>
+          </div>
       </div>
     )
   }
