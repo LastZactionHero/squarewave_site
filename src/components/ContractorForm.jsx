@@ -26,6 +26,7 @@ class ContractorForm extends React.Component {
       city: '',
       phone: '',
       speciality: '',
+      otherSpeciality: '',
       currentlyEmployed: false,
       availability: '',
       projects: '',
@@ -68,7 +69,7 @@ class ContractorForm extends React.Component {
   handlePhoneChange = (event) => {
     this.setState({phone: event.target.value});
   }
-  
+
   handleMessageChange = (event) => {
     this.setState({message: event.target.value});
   }
@@ -81,8 +82,12 @@ class ContractorForm extends React.Component {
     this.setState({speciality: event.target.value});
   }
 
+  handleOtherSpecialityChange = (event) => {
+    this.setState({otherSpeciality: event.target.value});
+  }
+
   handleCurrentlyEmployedChange = (event) => {
-    this.setState({currentlyEmployed: event.target.value});
+    this.setState({currentlyEmployed: event.target.chekced});
   }
 
   handleProjectsChange = (event) => {
@@ -122,36 +127,59 @@ class ContractorForm extends React.Component {
       <div>
         {this.state.sentAlert ? <div className='alert alert-success'>Thanks! We&apos;ll be in touch soon!</div> : null}
         <div className="form-group">
-          <label htmlFor="email">Email address</label>
-          <input type="email" className="form-control" id="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
+          <label htmlFor="email">Email address *</label>
+          <input type="email" className="form-control" id="email" value={this.state.email} onChange={this.handleEmailChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" className="form-control" id="name" placeholder="Name" value={this.state.name} onChange={this.handleNameChange} />
+          <label htmlFor="name">Name *</label>
+          <input type="text" className="form-control" id="name" alue={this.state.name} onChange={this.handleNameChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="city">City</label>
-          <input type="text" className="form-control" id="city" placeholder="City" value={this.state.city} onChange={this.handleCityChange} />
+          <label htmlFor="city">City *</label>
+          <input type="text" className="form-control" id="city" value={this.state.city} onChange={this.handleCityChange} />
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone</label>
-          <input type="text" className="form-control" id="phone" placeholder="Phone" value={this.state.phone} onChange={this.handlePhoneChange} />
+          <input type="text" className="form-control" id="phone" value={this.state.phone} onChange={this.handlePhoneChange} />
         </div>
         <div className="form-group">
-          <label htmlFor="speciality">Speciality</label>
-          <input type="text" className="form-control" id="speciality" placeholder="" value={this.state.speciality} onChange={this.handleSpecialityChange} />
+          <label htmlFor="speciality">Speciality *</label>
+          <select className='form-control' id="speciality" value={this.state.speciality} onChange={this.handleSpecialityChange}>
+            <option>3D Design</option>
+            <option>Computer Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Firmware Engineering</option>
+            <option>Graphics Design</option>
+            <option>Industrial Design</option>
+            <option>Mechanical Engineering</option>
+            <option>Software Engineering</option>
+            <option>Project Managment</option>
+            <option value='other'>Other (specify below)</option>
+          </select>
         </div>
-        <div className="form-group">
-          <label htmlFor="currentlyEmployed">Currently Employed</label>
-          <input type="text" className="form-control" id="currentlyEmployed" value={this.state.currentlyEmployed} onChange={this.handleCurrentlyEmployedChange} />
+        { this.state.speciality == 'other' ? 
+            <div className='form-group'>
+              <input type='text' className="form-control" id="other-speciality" placeholder='Speciality' value={this.state.otherSpeciality} onChange={this.handleOtherSpecialityChange} />
+            </div>
+            : ''
+        }
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" defaultChecked={this.state.currentlyEmployed} onChange={this.handleCurrentlyEmployedChange}/> Currently Employed
+          </label>
         </div>
         <div className="form-group">
           <label htmlFor="availability">Availability</label>
-          <input type="text" className="form-control" id="availability" placeholder="" value={this.state.availability} onChange={this.handleAvailabilityChange} />
+          <select className='form-control' id="availability" value={this.state.availability} onChange={this.handleAvailabilityChange}>
+            <option>Freelance</option>
+            <option>Part Time</option>
+            <option>Full Time</option>
+            <option>Unavailable - just interested in networking</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="projects">Projects</label>
-          <textarea className="form-control" id="projects" placeholder="" value={this.state.projects} onChange={this.handleProjectsChange} />
+          <textarea className="form-control" id="projects" placeholder="Any noteworthy projects you've worked on." value={this.state.projects} onChange={this.handleProjectsChange} />
         </div>
         <div className="form-group">
           <label htmlFor="twitter">Twitter</label>
@@ -171,7 +199,7 @@ class ContractorForm extends React.Component {
         </div>
         <div className="form-group">
           <label htmlFor="anythingElse">Anything Else</label>
-          <textarea className="form-control" id="anythingElse" placeholder="" value={this.state.anythingElse} onChange={this.handleAnythingElseChange} />
+          <textarea className="form-control" id="anythingElse" placeholder="Anything else you'd like to share." value={this.state.anythingElse} onChange={this.handleAnythingElseChange} />
         </div>
         <div className="form-group">
           <label htmlFor="skills">Skills</label>

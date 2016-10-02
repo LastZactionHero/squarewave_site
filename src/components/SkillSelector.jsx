@@ -78,6 +78,7 @@ class SkillSelector extends React.Component {
   }
 
   addSkillToSelectedList = () => {
+    if(this.state.newSkill.length == 0){ return; }
     let existingSkill = this.state.skills.find(s => s.name == this.state.newSkill);
 
     if(existingSkill){
@@ -137,7 +138,9 @@ class SkillSelector extends React.Component {
               inputProps={inputProps} />
             </div>
             <div className='col-xs-1'>
-              <a href='javascript:void(0)'><i className='fa fa-plus-circle' aria-hidden='true'></i></a>
+              <a href='javascript:void(0)' onClick={this.addSkillToSelectedList}>
+                <i className='fa fa-plus-circle btn btn-primary add-skill' aria-hidden='true'></i>
+              </a>
             </div>
         </form>
       </div>
