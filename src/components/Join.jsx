@@ -7,19 +7,9 @@ class Join extends React.Component<> {
       <div>
         <div className="container-fluid container-contact">
           <div className="container">
-            <h2>Contact Us</h2>
-            <div className="row">
-              <div className="col-md-6">
-                <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
-                <ContractorForm></ContractorForm>
-              </div>
-              <div className="col-md-6">
-                <h4>Email Us Directly:</h4>
-                <p>info@squarewaveng.com</p>
-                <h4>Call Us:</h4>
-                <p>317-496-8472</p>
-              </div>
-            </div>
+            <h2>Join the Team</h2>
+            <p>Tell us a few things about yourself- this just helps us find good people for projects. We'll never sell or share your info.</p>
+            <ContractorForm></ContractorForm>
           </div>
         </div>
         <div className="splash">

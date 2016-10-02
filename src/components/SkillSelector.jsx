@@ -125,7 +125,7 @@ class SkillSelector extends React.Component {
   render() {
     // Autosuggest will pass through all these props to the input field.
     const inputProps = {
-      placeholder: 'Skill',
+      placeholder: 'PCB Design, Atmel, VHDL, etc...',
       value: this.state.newSkill,
       onChange: this.handleNewSkillChange,
       className: 'form-control'
