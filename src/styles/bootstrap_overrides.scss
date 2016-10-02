@@ -3,3 +3,7 @@
 .btn-primary {
   background-color: $color_b;
 }
+
+.has-error, .has-error .help-block {
+  color: $color_a;
+}
