@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import AutoSuggest from 'react-autosuggest';
+import SkillItem from './SkillItem';
 
 class SkillSelector extends React.Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class SkillSelector extends React.Component {
   componentDidMount = () => {
     $.ajax({
       method: 'GET',
-      url: 'http://contactus.squarewaveng.com/skills',
+      url: API_HOST + '/skills',
       contentType: 'application/json'
     }).done(
       (body) => {
@@ -65,9 +66,10 @@ class SkillSelector extends React.Component {
   }
 
   handleNewSkillChange = (event, { newValue }) => {
-    this.setState({newSkill: newValue});
-    if(event.type == 'click')
-      this.addSkillToSelectedList();
+    this.setState({newSkill: newValue})
+    if(event.type == 'click'){
+      setTimeout(this.addSkillToSelectedList.bind(this))
+    }
   }
 
   handleSubmit = (event) => {
@@ -77,12 +79,36 @@ class SkillSelector extends React.Component {
 
   addSkillToSelectedList = () => {
     let existingSkill = this.state.skills.find(s => s.name == this.state.newSkill);
+
     if(existingSkill){
-      this.setState({selectedSkills: this.state.selectedSkills.push(existingSkill)})
+      var notInList = !this.state.selectedSkills.find(s => s.name == this.state.newSkill);
+      if(notInList){
+        this.setState({selectedSkills: this.state.selectedSkills.concat(existingSkill)});
+      }
     } else {
-      console.log("gotta create a new skill!")
+      $.ajax({
+        method: 'POST',
+        url: API_HOST + '/skills',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          name: this.state.newSkill
+        })
+      }).done( (newSkill) => {
+        this.setState({
+          skills: this.state.skills.concat(newSkill),
+          selectedSkills: this.state.selectedSkills.concat(newSkill)
+        });
+        this.render();
+      });
     }
     this.setState({newSkill: ''});
+  }
+
+  removeSkillFromSelectList = (skill) => {
+    let idx = this.state.selectedSkills.indexOf(skill);
+    var selectedSkills = this.state.selectedSkills;
+    selectedSkills.splice(idx,1);
+    this.setState({selectedSkills: selectedSkills});
   }
 
   render() {
@@ -95,20 +121,26 @@ class SkillSelector extends React.Component {
     };
 
     return(
-      <form className='row' onSubmit={this.handleSubmit}>
-        <div className='col-xs-11'>
-          <AutoSuggest
-            suggestions={this.state.suggestions}
-            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-            getSuggestionValue={this.getSuggestionValue}
-            renderSuggestion={this.renderSuggestion}
-            inputProps={inputProps} />
-          </div>
-          <div className='col-xs-1'>
-            <a href='javascript:void(0)'><i className="fa fa-plus-circle" aria-hidden="true"></i></a>
-          </div>
-      </form>
+      <div className='skill-selector'>
+        <ul>
+          {this.state.selectedSkills.map( (skill) => <SkillItem key={skill.id} skill={skill} removeSkillCallback={this.removeSkillFromSelectList}></SkillItem> )}
+        </ul>
+         <div className="clearfix"></div>
+        <form className='row' onSubmit={this.handleSubmit}>
+          <div className='col-xs-11'>
+            <AutoSuggest
+              suggestions={this.state.suggestions}
+              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+              getSuggestionValue={this.getSuggestionValue}
+              renderSuggestion={this.renderSuggestion}
+              inputProps={inputProps} />
+            </div>
+            <div className='col-xs-1'>
+              <a href='javascript:void(0)'><i className='fa fa-plus-circle' aria-hidden='true'></i></a>
+            </div>
+        </form>
+      </div>
     )
   }
 }

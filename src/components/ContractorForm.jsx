@@ -40,21 +40,21 @@ class ContractorForm extends React.Component {
 
   submit = (event) => {
     event.preventDefault();
-    $.ajax({
-      method: 'POST',
-      url: 'http://contactus.squarewaveng.com/contact',
-      contentType: 'application/json',
-      data: JSON.stringify({
-        email: this.state.email,
-        name: this.state.name,
-        phone: this.state.phone,
-        message: this.state.message
-      })
-    }).done(
-      () => {
-        this.setState({sentAlert: true});
-      }
-    )
+    // $.ajax({
+    //   method: 'POST',
+    //   url: 'http://contactus.squarewaveng.com/contact',
+    //   contentType: 'application/json',
+    //   data: JSON.stringify({
+    //     email: this.state.email,
+    //     name: this.state.name,
+    //     phone: this.state.phone,
+    //     message: this.state.message
+    //   })
+    // }).done(
+    //   () => {
+    //     this.setState({sentAlert: true});
+    //   }
+    // )
   }
 
   handleEmailChange = (event) => {

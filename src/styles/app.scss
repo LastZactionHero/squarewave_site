@@ -1,9 +1,4 @@
-$color_a: #FE4A49;
-$color_b: #2AB7CA;
-$color_c: #FED766;
-$color_d: #E6E6EA;
-$color_white: #F4F4F8;
-$color_dark: #29292B;
+@import 'colors';
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -138,3 +133,5 @@ body {
     padding: 5px 20px;
   }
 }
+
+@import 'skill_selector';

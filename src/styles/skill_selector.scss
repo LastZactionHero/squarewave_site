@@ -1,0 +1,24 @@
+@import 'colors';
+
+.skill-selector {
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+
+    li.skill-item {
+      float: left;
+      margin: 4px 12px 4px 0px;
+      padding: 6px;
+      background-color: $color_b;
+      border-radius: 4px;
+
+      i {
+        margin-left: 6px;
+      }
+    }
+  }
+  form {
+    margin-top: 12px;
+  }
+}
