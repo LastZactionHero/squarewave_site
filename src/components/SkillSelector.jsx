@@ -68,23 +68,23 @@ class SkillSelector extends React.Component {
   handleNewSkillChange = (event, { newValue }) => {
     this.setState({newSkill: newValue})
     if(event.type == 'click'){
-      setTimeout(this.addSkillToSelectedList.bind(this))
+      setTimeout(this.addSkillByName.bind(this))
     }
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.addSkillToSelectedList();
+    this.addSkillByName();
   }
 
-  addSkillToSelectedList = () => {
+  addSkillByName = () => {
     if(this.state.newSkill.length == 0){ return; }
     let existingSkill = this.state.skills.find(s => s.name == this.state.newSkill);
 
     if(existingSkill){
       var notInList = !this.state.selectedSkills.find(s => s.name == this.state.newSkill);
       if(notInList){
-        this.setState({selectedSkills: this.state.selectedSkills.concat(existingSkill)});
+        this.addSkillToSelectedList(existingSkill, false);
       }
     } else {
       $.ajax({
@@ -95,14 +95,24 @@ class SkillSelector extends React.Component {
           name: this.state.newSkill
         })
       }).done( (newSkill) => {
-        this.setState({
-          skills: this.state.skills.concat(newSkill),
-          selectedSkills: this.state.selectedSkills.concat(newSkill)
-        });
-        this.render();
+        this.addSkillToSelectedList(newSkill, true);
       });
     }
     this.setState({newSkill: ''});
+  }
+
+  addSkillToSelectedList = (skill, isNew) => {
+    let selectedSkillsList = this.state.selectedSkills;
+    selectedSkillsList = selectedSkillsList.concat(skill);
+    let stateUpdates = {selectedSkills: selectedSkillsList}
+
+    if(isNew){
+      stateUpdates.skills = this.state.skills.concat(skill);
+    }
+
+    this.setState(stateUpdates);
+    this.render();
+    this.props.onSkillChange(selectedSkillsList)
   }
 
   removeSkillFromSelectList = (skill) => {
@@ -138,7 +148,7 @@ class SkillSelector extends React.Component {
               inputProps={inputProps} />
             </div>
             <div className='col-xs-1'>
-              <a href='javascript:void(0)' onClick={this.addSkillToSelectedList}>
+              <a href='javascript:void(0)' onClick={this.addSkillByName}>
                 <i className='fa fa-plus-circle btn btn-primary add-skill' aria-hidden='true'></i>
               </a>
             </div>
