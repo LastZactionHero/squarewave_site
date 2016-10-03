@@ -9,7 +9,6 @@ class ContractorForm extends React.Component {
       email: '',
       name: '',
       city: '',
-      phone: '',
       speciality: '',
       otherSpeciality: '',
       currentlyEmployed: false,
@@ -32,7 +31,6 @@ class ContractorForm extends React.Component {
       email: this.state.email,
       name: this.state.name,
       city: this.state.city,
-      phone: this.state.phone,
       speciality: this.state.speciality == 'other' ? this.state.otherSpeciality : this.state.speciality,
       currently_employed: this.state.currentlyEmployed,
       availability: this.state.availability,
@@ -65,10 +63,6 @@ class ContractorForm extends React.Component {
 
   handleNameChange = (event) => {
     this.setState({name: event.target.value});
-  }
-
-  handlePhoneChange = (event) => {
-    this.setState({phone: event.target.value});
   }
 
   handleMessageChange = (event) => {
@@ -146,11 +140,6 @@ class ContractorForm extends React.Component {
               <input type="text" className="form-control" id="city" value={this.state.city} onChange={this.handleCityChange} />
               {this.state.errors.city ? <span className="help-block">City {this.state.errors.city.join(', ')}.</span> : ''}
             </div>
-            <div className={this.state.errors.phone ? classesFGWErrors : classesFGNoErrors}>
-              <label htmlFor="phone">Phone</label>
-              <input type="text" className="form-control" id="phone" value={this.state.phone} onChange={this.handlePhoneChange} />
-              {this.state.errors.phone ? <span className="help-block">Phone {this.state.errors.phone.join(', ')}.</span> : ''}
-            </div>
             <div className={this.state.errors.speciality ? classesFGWErrors : classesFGNoErrors}>
               <label htmlFor="speciality">Speciality *</label>
               <select className='form-control' id="speciality" value={this.state.speciality} onChange={this.handleSpecialityChange}>
@@ -182,6 +171,7 @@ class ContractorForm extends React.Component {
             <div className={this.state.errors.availability ? classesFGWErrors : classesFGNoErrors}>
               <label htmlFor="availability">Availability</label>
               <select className='form-control' id="availability" value={this.state.availability} onChange={this.handleAvailabilityChange}>
+                <option></option>
                 <option>Freelance</option>
                 <option>Part Time</option>
                 <option>Full Time</option>
