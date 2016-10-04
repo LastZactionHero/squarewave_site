@@ -1,7 +1,16 @@
 import React from 'react';
 import ContractorForm from './ContractorForm';
+import SmoothScroll from 'smoothscroll';
 
-class Join extends React.Component<> {
+class Join extends React.Component {
+
+  handleCTA = (event) => {
+    event.preventDefault();
+
+    let contactForm = document.querySelector('.container-contact');
+    SmoothScroll(contactForm);
+  }
+
   render() {
     return (
       <div>
@@ -10,7 +19,7 @@ class Join extends React.Component<> {
           <div className="splash-hero">
             <img src='images/logo_named_white.png' className='splash-logo' />
             <p className="tagline">Join the network of Colorado engineers.</p>
-            <a className='btn btn-hero' href='javascript:void(0)'>Join the Team</a>
+            <a className='btn btn-hero' href='javascript:void(0)' onClick={this.handleCTA}>Join the Team</a>
           </div>
         </div>
         <div className="container-fluid container-lead lead-light">
@@ -58,7 +67,7 @@ class Join extends React.Component<> {
         <div className="container-fluid container-contact">
           <div className="container">
             <h2>Join the Team</h2>
-            <p>Tell us a few things about yourself- this just helps us find good people for projects. We'll never sell or share your info.</p>
+            <p>Tell us a few things about yourself- this just helps us find good people for projects. We&apos;ll never sell or share your info.</p>
             <ContractorForm></ContractorForm>
           </div>
         </div>
