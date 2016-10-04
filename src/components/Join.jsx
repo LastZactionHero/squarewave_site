@@ -5,7 +5,7 @@ class Join extends React.Component<> {
   render() {
     return (
       <div>
-        <div className="splash">
+        <div className="splash circuit">
           <div className="splash-overlay" />
           <div className="splash-hero">
             <img src='images/logo_named_white.png' className='splash-logo' />
@@ -40,7 +40,7 @@ class Join extends React.Component<> {
                   Connect with Others
                 </div>
                 <div className="description">
-                  
+
                 </div>
               </div>
               <div className="col-md-4 tag">
@@ -53,7 +53,7 @@ class Join extends React.Component<> {
               </div>
             </div>
           </div>
-        </div>        
+        </div>
         <div className="container-fluid container-contact">
           <div className="container">
             <h2>Join the Team</h2>
