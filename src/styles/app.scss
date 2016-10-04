@@ -11,6 +11,14 @@ body {
   background-image: url("./splash_printer.png");
   border-bottom: 40px solid $color_c;
 
+  .btn-hero {
+    background-color: $color_dark;
+    border: 2px solid $color_b;
+    color: $color_white;
+    padding: 20px;
+    font-size: 1.6em;
+  }
+
   .splash-overlay {
     position: absolute;
     opacity: 0.5;
@@ -39,6 +47,7 @@ body {
       font-family: 'Raleway', sans-serif;
       font-size: 1.6em;
       font-weight: 100;
+      margin-bottom: 32px;
     }
   }
 }

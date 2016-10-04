@@ -10,6 +10,7 @@ class Join extends React.Component<> {
           <div className="splash-hero">
             <img src='images/logo_named_white.png' className='splash-logo' />
             <p className="tagline">Join the network of Colorado engineers.</p>
+            <a className='btn btn-hero' href='javascript:void(0)'>Join the Team</a>
           </div>
         </div>
         <div className="container-fluid container-lead lead-light">
