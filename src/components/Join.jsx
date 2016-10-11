@@ -5,60 +5,21 @@ class Join extends React.Component<> {
   render() {
     return (
       <div>
-        <div className="container-fluid container-contact">
-          <div className="container">
-            <h2>Join the Team</h2>
-            <p>Tell us a few things about yourself- this just helps us find good people for projects. We'll never sell or share your info.</p>
-            <ContractorForm></ContractorForm>
-          </div>
-        </div>
         <div className="splash">
           <div className="splash-overlay" />
           <div className="splash-hero">
             <img src='images/logo_named_white.png' className='splash-logo' />
-            <p className="tagline">Building Colorado industries with local engineering and creative talent.</p>
+            <p className="tagline">Join the network of Colorado engineers.</p>
           </div>
         </div>
-        <div className="container-fluid container-services">
-          <div className="container">
-            <div className="row row-services">
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-cog" /> 3D Design</p>
-                <p className="description">3D models, printed prototypes, and production runs.</p>
-              </div>
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-flash" /> Electronics</p>
-                <p className="description">Component selection, PCB design, and fabrication.</p>
-              </div>
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-code" /> Firmware</p>
-                <p className="description">We specialize in reliability, efficiency and communication.</p>
-              </div>
-            </div>
-            <div className="row row-services">
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-plug" /> API</p>
-                <p className="description">Cloud infrastruture to securely connect your products, developers, and data.</p>
-              </div>
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-mobile" /> Interface</p>
-                <p className="description">Monitor and controls your connected products with simple and elegant web interfaces and apps.</p>
-              </div>
-              <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-bullseye" /> AI + Data</p>
-                <p className="description">Use your data to make intelligent decisions through AI and machine learning.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid container-lead">
+        <div className="container-fluid container-lead lead-light">
           <div className="container">
             <div className="row">
               <div className="col-md-6 lead">
-                We build electronics, manufacturing controls, custom lighting, IoT devices, and cloud-based systems.
+                We're a network for local engineers, creatives, developers, and project managers.
               </div>
               <div className="col-md-6 lead">
-                We&apos;re available one-off specialty equipment and large production runs.
+                We use on local teams for short-term engineering projects.
               </div>
             </div>
           </div>
@@ -68,32 +29,42 @@ class Join extends React.Component<> {
             <div className="row">
               <div className="col-md-4 tag">
                 <div className="title">
-                  End-to-End Solutions
+                  Short-Term Projects
                 </div>
                 <div className="description">
-                  Our multidiciplinary team takes your ideas from discovery to production.
+                  We build ad-hoc teams of engineers, designers, and project managers for contract engineering projects.
                 </div>
               </div>
               <div className="col-md-4 tag">
                 <div className="title">
-                  Startup Tested
+                  Connect with Others
                 </div>
                 <div className="description">
-                  We know startups- as founders and early employees.
+                  
                 </div>
               </div>
               <div className="col-md-4 tag">
                 <div className="title">
-                  Colorado Built
+                  Get Assistance
                 </div>
                 <div className="description">
-                  We&apos;re focused on building products and tools for Colorado companies, and we do it with a local team of experts.
+                  Stuck on something? Ask other experts in the community on projects of any scope.
                 </div>
               </div>
             </div>
           </div>
+        </div>        
+        <div className="container-fluid container-contact">
+          <div className="container">
+            <h2>Join the Team</h2>
+            <p>Tell us a few things about yourself- this just helps us find good people for projects. We'll never sell or share your info.</p>
+            <ContractorForm></ContractorForm>
+          </div>
         </div>
         <div className="container-fluid container-footer">
+          <div className='container'>
+            <a href='/policy'>Privacy Policy</a>
+          </div>
         </div>
       </div>
     );

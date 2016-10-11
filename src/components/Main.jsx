@@ -104,6 +104,9 @@ class Main extends React.Component<> {
           </div>
         </div>
         <div className="container-fluid container-footer">
+          <div className='container'>
+            <a href='/policy'>Privacy Policy</a>
+          </div>
         </div>
       </div>
     );

@@ -75,6 +75,19 @@ body {
   border-bottom: 40px solid $color_c;
 }
 
+.container-lead.lead-light {
+  background-color: $color_d;
+  padding: 24px 0px;
+
+  .lead {
+    padding: 64px;
+    font-size: 2em;
+    font-weight: lighter;
+    color: $color_dark;
+  }
+  border-bottom: none; //40px solid $color_c;
+}
+
 .container-tags {
   background-color: $color_b;
   color: $color-white;
@@ -121,6 +134,9 @@ body {
   background-color: $color_dark;
   color: $color_d;
   padding: 24px 0px 64px 0px;
+  a {
+    color: white;
+  }
 }
 
 .react-autosuggest__suggestions-list {
