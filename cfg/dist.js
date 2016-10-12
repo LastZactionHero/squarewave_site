@@ -23,7 +23,7 @@ let config = Object.assign({}, baseConfig, {
     }),
     new webpack.DefinePlugin({
       API_HOST: JSON.stringify('http://contactus.squarewaveng.com')
-    })
+    }),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
