@@ -99,7 +99,7 @@ class Main extends React.Component<> {
                 <h4>Email Us Directly:</h4>
                 <p>info@squarewaveng.com</p>
                 <h4>Call Us:</h4>
-                <p>317-496-8472</p>
+                <p>303-552-9644</p>
               </div>
             </div>
           </div>
