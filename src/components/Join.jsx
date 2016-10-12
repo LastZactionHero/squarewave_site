@@ -15,10 +15,11 @@ class Join extends React.Component<> {
           </div>
         </div>
         <div className="container-fluid container-services container-services-no-content">
-          <div className="container">
+          <div className="container text-center">
             <div className="row row-services">
+              <h2>We're looking for skilled:</h2>
               <div className="col-md-4 service">
-                <p className="title"><i className="fa fa-flash" /> Engineers</p>
+                <p className="title "><i className="fa fa-flash" /> Engineers</p>
               </div>
               <div className="col-md-4 service">
                 <p className="title"><i className="fa fa-code" /> Software Developers</p>
