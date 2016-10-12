@@ -196,11 +196,14 @@ class ContractorForm extends React.Component {
               <textarea className="form-control" id="anythingElse" placeholder="Anything else you'd like to share. Projects, work history, personal website, Twitter, Github, etc." value={this.state.anythingElse} onChange={this.handleAnythingElseChange} />
               {this.state.errors.anything_else ? <span className="help-block">Field {this.state.errors.anything_else.join(', ')}.</span> : ''}
             </div>
+            
+            <br/><br/>
+            <div className='text-right'>
+              <button type="submit" className="btn btn-primary btn-lg" onClick={this.submit}>Join the Network</button>
+            </div>
           </div>
         </div>
-        <div className='text-right'>
-          <button type="submit" className="btn btn-primary btn-lg" onClick={this.submit}>Join the Network</button>
-        </div>
+
         
       </div>
     )
