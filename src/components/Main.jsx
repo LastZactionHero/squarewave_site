@@ -11,6 +11,7 @@ class Main extends React.Component<> {
           <div className="splash-hero">
             <img src='images/logo_named_white.png' className='splash-logo' />
             <p className="tagline">Building Colorado industries with local engineering and creative talent.</p>
+            <a className='btn btn-primary-contrast btn-join btn-lg' href='/join'>Engineer? Join our team!</a>
           </div>
         </div>
         <div className="container-fluid container-services">
@@ -82,6 +83,8 @@ class Main extends React.Component<> {
                 </div>
                 <div className="description">
                   We&apos;re focused on building products and tools for Colorado companies, and we do it with a local team of experts.
+                  <br/><br/>
+                  <a className='btn btn-primary-contrast btn-join btn-lg' href='/join'>Engineer? Join our team!</a>
                 </div>
               </div>
             </div>
@@ -100,6 +103,7 @@ class Main extends React.Component<> {
                 <p>info@squarewaveng.com</p>
                 <h4>Call Us:</h4>
                 <p>303-552-9644</p>
+                <a className='btn btn-primary btn-join btn-lg' href='/join'>Join our team!</a>
               </div>
             </div>
           </div>

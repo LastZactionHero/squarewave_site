@@ -4,6 +4,11 @@
   background-color: $color_b;
 }
 
+.btn-primary-contrast {
+  background-color: $color_c;
+  color: $color_dark;
+}
+
 .has-error, .has-error .help-block {
   color: $color_a;
 }

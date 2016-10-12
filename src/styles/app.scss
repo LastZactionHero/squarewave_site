@@ -40,6 +40,18 @@ body {
       font-size: 1.6em;
       font-weight: 100;
     }
+
+    .btn-join {
+      position: absolute;
+      right: 0px;
+      top: -80px;
+    }
+    @media (max-width: 767px) {
+      .btn-join {
+        left: 0px;
+        font-size: 1em;
+      }
+    }
   }
 }
 
@@ -106,6 +118,10 @@ body {
       font-size: 1em;
     }
   }
+
+  .btn-join {
+    margin-top: 16px;
+  }
 }
 
 .container-contact {
@@ -128,9 +144,18 @@ body {
   a {
     color: $color_white;
   }
+
+  .btn-join {
+    margin-top: 32px;
+  }
 }
 
 .container-footer {
+  .container {
+    border-top: 1px solid $color_white;
+    padding-top: 32px;
+  }
+
   background-color: $color_dark;
   color: $color_d;
   padding: 24px 0px 64px 0px;
@@ -140,7 +165,7 @@ body {
     li {
       margin: 10px 0px;
       a {
-        color: white;
+        color: $color_white;
       }
     }
   }
@@ -150,7 +175,7 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  
+
   li {
     background-color: $color-white;
     color: $color_dark;
