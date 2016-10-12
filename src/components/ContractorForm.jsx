@@ -217,7 +217,7 @@ class ContractorForm extends React.Component {
           </div>
         </div>
         <div className='text-right'>
-          <button type="submit" className="btn btn-primary" onClick={this.submit}>Join the Network</button>
+          <button type="submit" className="btn btn-primary btn-lg" onClick={this.submit}>Join the Network</button>
         </div>
         
       </div>

@@ -138,7 +138,7 @@ class SkillSelector extends React.Component {
         </ul>
          <div className="clearfix"></div>
         <form className='row' onSubmit={this.handleSubmit}>
-          <div className='col-xs-11'>
+          <div className='col-xs-10'>
             <AutoSuggest
               suggestions={this.state.suggestions}
               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -147,7 +147,7 @@ class SkillSelector extends React.Component {
               renderSuggestion={this.renderSuggestion}
               inputProps={inputProps} />
             </div>
-            <div className='col-xs-1'>
+            <div className='col-xs-2'>
               <a href='javascript:void(0)' onClick={this.addSkillByName}>
                 <i className='fa fa-plus-circle btn btn-primary add-skill' aria-hidden='true'></i>
               </a>

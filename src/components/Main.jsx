@@ -98,7 +98,7 @@ class Main extends React.Component<> {
                 <p>What can we build for you? Don&apos;t hesitate to drop us a line.</p>
                 <ContactForm></ContactForm>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 contact-details">
                 <h4>Email Us Directly:</h4>
                 <p>info@squarewaveng.com</p>
                 <h4>Call Us:</h4>
