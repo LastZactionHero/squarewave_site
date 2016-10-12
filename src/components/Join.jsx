@@ -11,7 +11,7 @@ class Join extends React.Component<> {
           <div className="splash-overlay" />
           <div className="splash-hero">
             <img src={LogoImage} className='splash-logo' />
-            <p className="tagline">Join the network of Colorado freelance engineers.</p>
+            <p className="tagline">Join our team of Colorado freelance engineers.</p>
           </div>
         </div>
         <div className="container-fluid container-services container-services-no-content">
@@ -20,12 +20,15 @@ class Join extends React.Component<> {
               <h2>We're looking for skilled:</h2>
               <div className="col-md-4 service">
                 <p className="title "><i className="fa fa-flash" /> Engineers</p>
+                <p className="description">Electrical / Computer / Mechanical / Test</p>
               </div>
               <div className="col-md-4 service">
                 <p className="title"><i className="fa fa-code" /> Software Developers</p>
+                <p className="description">Firmware / Web / App / Intrastructure</p>
               </div>
               <div className="col-md-4 service">
                 <p className="title"><i className="fa fa-desktop" /> Designers</p>
+                <p className="description">Industrial / UI</p>
               </div>
             </div>
             <div className="row row-services">
@@ -85,7 +88,7 @@ class Join extends React.Component<> {
         </div>        
         <div className="container-fluid container-contact">
           <div className="container">
-            <h2>Join the Team</h2>
+            <h2>Join our Team</h2>
             <h4>Tell us a few things about yourself- this helps us find good people for projects. We'll never sell or share your info.</h4>
             <ContractorForm></ContractorForm>
           </div>

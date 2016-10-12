@@ -181,5 +181,12 @@ body {
   }
 }
 
+.contractor-form {
+  hr {
+    color: $color_white;
+    margin-top: 36px;
+    margin-bottom: 48px;
+  }
+}
 @import 'skill_selector';
 
