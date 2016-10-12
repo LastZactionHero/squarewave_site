@@ -74,30 +74,6 @@ body {
   }
 }
 
-.container-services-no-content {
-  background-color: $color_d;
-  padding: 24px 0px;
-
-  .row-services {
-    .service {
-      padding: 48px 24px;
-
-      .title {
-        font-weight: bold;
-        font-size: 1.6em;
-        border-bottom: none;
-        text-align: center;
-        
-        i {
-          margin-right: 8px;
-        }
-      }
-      .description {
-      }
-    }
-  }
-}
-
 .container-lead {
   background-color: $color_a;
   padding: 24px 0px;
