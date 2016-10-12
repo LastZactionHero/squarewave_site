@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
+import Footer from './Footer';
 
 class Main extends React.Component<> {
   render() {
@@ -103,11 +104,7 @@ class Main extends React.Component<> {
             </div>
           </div>
         </div>
-        <div className="container-fluid container-footer">
-          <div className='container'>
-            <a href='/policy'>Privacy Policy</a>
-          </div>
-        </div>
+        <Footer></Footer>
       </div>
     );
   }

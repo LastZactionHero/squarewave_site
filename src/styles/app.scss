@@ -134,8 +134,15 @@ body {
   background-color: $color_dark;
   color: $color_d;
   padding: 24px 0px 64px 0px;
-  a {
-    color: white;
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    li {
+      margin: 10px 0px;
+      a {
+        color: white;
+      }
+    }
   }
 }
 

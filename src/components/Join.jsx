@@ -1,5 +1,6 @@
 import React from 'react';
 import ContractorForm from './ContractorForm';
+import Footer from './Footer';
 
 class Join extends React.Component<> {
   render() {
@@ -61,11 +62,7 @@ class Join extends React.Component<> {
             <ContractorForm></ContractorForm>
           </div>
         </div>
-        <div className="container-fluid container-footer">
-          <div className='container'>
-            <a href='/policy'>Privacy Policy</a>
-          </div>
-        </div>
+        <Footer></Footer>
       </div>
     );
   }
