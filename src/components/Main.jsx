@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
+import LogoImage from '../images/logo_named_white.png'
 
 class Main extends React.Component<> {
   render() {
@@ -9,7 +10,7 @@ class Main extends React.Component<> {
         <div className="splash">
           <div className="splash-overlay" />
           <div className="splash-hero">
-            <img src='images/logo_named_white.png' className='splash-logo' />
+            <img src={LogoImage} className='splash-logo' />
             <p className="tagline">Building Colorado industries with local engineering and creative talent.</p>
             <a className='btn btn-primary-contrast btn-join btn-lg' href='/join'>Engineer? Join our team!</a>
           </div>
