@@ -2,6 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import SkillSelector from './SkillSelector';
 
+var Scroll = require('react-scroll');
+
 class ContractorForm extends React.Component {
   constructor(props) {
     super(props);
@@ -20,12 +22,16 @@ class ContractorForm extends React.Component {
       website: '',
       anythingElse: '',
       skills: [],
-      errors: {}
+      errors: {},
+      submitting: false
     }
   }
 
   submit = (event) => {
+    if(this.state.submitting){ return; }
+
     event.preventDefault();
+    this.setState({submitting: true});
 
     let postData = {
       email: this.state.email,
@@ -51,9 +57,21 @@ class ContractorForm extends React.Component {
     }).done(
       () => {
         this.setState({sentAlert: true, errors: {}});
+        this.setState({submitting: false});
+        this.scrollToFormTop();
       }
     ).fail( (xhr, status, error) => {
       this.setState({errors: xhr.responseJSON});
+      this.setState({submitting: false});
+      this.scrollToFormTop();
+    });
+  }
+
+  scrollToFormTop = () => {
+    let scroller = Scroll.scroller;
+    scroller.scrollTo('contractor-form-top', {
+      duration: 250,
+      smooth: true
     });
   }
 
@@ -117,11 +135,17 @@ class ContractorForm extends React.Component {
     this.setState({skills: skills})
   }
 
+  submitBtnClass = () => {
+    let baseClasses = ['btn', 'btn-primary', 'btn-lg'];
+    if(this.state.submitting){ baseClasses.push('disabled') }
+    return baseClasses.join(' ');
+  }
+
   render() {
     let classesFGNoErrors = 'form-group'
     let classesFGWErrors = classesFGNoErrors +' has-error'
     return (
-      <div className='contractor-form'>
+      <div className='contractor-form' id='contractor-form-top'>
         {this.state.sentAlert ? <div className='alert alert-success'>Thanks! We&apos;ll be in touch soon!</div> : null}
         <div className='row'>
           <div className='col-md-6'>
@@ -199,7 +223,7 @@ class ContractorForm extends React.Component {
             
             <br/><br/>
             <div className='text-right'>
-              <button type="submit" className="btn btn-primary btn-lg" onClick={this.submit}>Join the Network</button>
+              <button type="submit" className={this.submitBtnClass()} onClick={this.submit}>Join the Network</button>
             </div>
           </div>
         </div>
