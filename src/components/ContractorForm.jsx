@@ -20,7 +20,7 @@ class ContractorForm extends React.Component {
       website: '',
       anythingElse: '',
       skills: [],
-      errors: []
+      errors: {}
     }
   }
 
