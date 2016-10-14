@@ -6,6 +6,7 @@ require('styles/app.scss');
 window.jQuery = require('jquery');
 require('bootstrap');
 
+import 'babel-polyfill';
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
