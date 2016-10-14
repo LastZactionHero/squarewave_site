@@ -3,7 +3,11 @@ import ContractorForm from './ContractorForm';
 import Footer from './Footer';
 import LogoImage from '../images/logo_named_white.png'
 
+var Scroll = require('react-scroll');
+var Link = Scroll.Link;
+
 class Join extends React.Component<> {
+
   render() {
     return (
       <div>
@@ -12,7 +16,7 @@ class Join extends React.Component<> {
           <div className="splash-hero">
             <img src={LogoImage} className='splash-logo' />
             <p className="tagline">Join our team of Colorado freelance engineers.</p>
-            <a className='btn btn-primary-contrast btn-lg btn-cta visible-xs'>Join</a>
+            <Link className='btn btn-primary-contrast btn-lg btn-cta visible-xs' to="contractor-form-container" spy={true} smooth={true} duration={250}>Join</Link>
           </div>
         </div>
         <div className="container-fluid container-services container-services-no-content">
@@ -88,7 +92,7 @@ class Join extends React.Component<> {
           </div>
         </div>        
         <div className="container-fluid container-contact">
-          <div className="container">
+          <div className="container" id='contractor-form-container'>
             <h2>Join our Team</h2>
             <h4>Tell us a few things about yourself- this helps us find good people for projects. We'll never sell or share your info.</h4>
             <ContractorForm></ContractorForm>
