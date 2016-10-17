@@ -9,6 +9,7 @@ body {
   position: relative;
   height: 600px;
   background-image: url("./splash_printer.png");
+  background-size: cover;
   border-bottom: 40px solid $color_c;
 
   .splash-overlay {
@@ -62,6 +63,10 @@ body {
       }
     }
   }
+}
+
+.splash-join {
+  background-image: url("./splash_circuit.png");
 }
 
 .container-services {
@@ -194,4 +199,3 @@ body {
   }
 }
 @import 'skill_selector';
-

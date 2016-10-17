@@ -11,7 +11,7 @@ class Join extends React.Component<> {
   render() {
     return (
       <div>
-        <div className="splash">
+        <div className="splash splash-join">
           <div className="splash-overlay" />
           <div className="splash-hero">
             <img src={LogoImage} className='splash-logo' />
@@ -90,7 +90,7 @@ class Join extends React.Component<> {
               </div>
             </div>
           </div>
-        </div>        
+        </div>
         <div className="container-fluid container-contact">
           <div className="container" id='contractor-form-container'>
             <h2>Join our Team</h2>
