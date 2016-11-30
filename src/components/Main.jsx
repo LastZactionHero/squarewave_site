@@ -11,7 +11,7 @@ class Main extends React.Component<> {
           <div className="splash-overlay" />
           <div className="splash-hero">
             <img src={LogoImage} className='splash-logo' />
-            <p className="tagline">Building Colorado industries with local engineering and creative talent.</p>
+            <p className="tagline">Building Colorado products with local engineering and creative talent.</p>
             <a className='btn btn-primary-contrast btn-join btn-lg' href='/join'>Engineer? Join our team!</a>
           </div>
         </div>
