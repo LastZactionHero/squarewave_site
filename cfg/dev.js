@@ -24,7 +24,7 @@ let config = Object.assign({}, baseConfig, {
       searchResolveModulesDirectories: false
     }),
     new webpack.DefinePlugin({
-      API_HOST: JSON.stringify('http://localhost:5691')
+      API_HOST: JSON.stringify('http://dev-api.squarewaveng.com:3000')
     })
   ],
   module: defaultSettings.getDefaultModules()
