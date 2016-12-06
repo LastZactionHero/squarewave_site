@@ -22,6 +22,7 @@ class ContractorForm extends React.Component {
       website: '',
       anythingElse: '',
       skills: [],
+      newsletter: true,
       errors: {},
       submitting: false
     }
@@ -46,6 +47,7 @@ class ContractorForm extends React.Component {
       linkedin: this.state.linked,
       website: this.state.website,
       anythingElse: this.state.anythingElse,
+      newsletter: this.state.newsletter,
       skills: this.state.skills.map( (skill) => skill.id)
     }
 
@@ -101,6 +103,10 @@ class ContractorForm extends React.Component {
 
   handleCurrentlyEmployedChange = (event) => {
     this.setState({currentlyEmployed: event.target.chekced});
+  }
+
+  handleNewsletterChange = (event) => {
+    this.setState({newsletter: event.target.chekced});
   }
 
   handleProjectsChange = (event) => {
@@ -185,7 +191,7 @@ class ContractorForm extends React.Component {
               </select>
               {this.state.errors.speciality ? <span className="help-block">Speciality {this.state.errors.speciality.join(', ')}.</span> : ''}
             </div>
-            { this.state.speciality == 'other' ? 
+            { this.state.speciality == 'other' ?
                 <div className='form-group'>
                   <input type='text' className="form-control" id="other-speciality" placeholder='Speciality' value={this.state.otherSpeciality} onChange={this.handleOtherSpecialityChange} />
                 </div>
@@ -220,7 +226,13 @@ class ContractorForm extends React.Component {
               <textarea className="form-control" id="anythingElse" placeholder="Anything else you'd like to share. Projects, work history, personal website, Twitter, Github, etc." value={this.state.anythingElse} onChange={this.handleAnythingElseChange} />
               {this.state.errors.anything_else ? <span className="help-block">Field {this.state.errors.anything_else.join(', ')}.</span> : ''}
             </div>
-            
+
+            <div className="checkbox">
+              <label>
+                <input type="checkbox" defaultChecked={this.state.newsletter} onChange={this.handleNewsletterChange}/> Sign up for our community newsletter for info jobs and other members. (You will not receive advertisements.)
+              </label>
+            </div>
+
             <br/><br/>
             <div className='text-right'>
               <button type="submit" className={this.submitBtnClass()} onClick={this.submit}>Join the Network</button>
@@ -228,7 +240,7 @@ class ContractorForm extends React.Component {
           </div>
         </div>
 
-        
+
       </div>
     )
   }
