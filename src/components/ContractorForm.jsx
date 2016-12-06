@@ -229,7 +229,9 @@ class ContractorForm extends React.Component {
 
             <div className="checkbox">
               <label>
-                <input type="checkbox" defaultChecked={this.state.newsletter} onChange={this.handleNewsletterChange}/> Sign up for our community newsletter for info jobs and other members. (You will not receive advertisements.)
+                <input type="checkbox" defaultChecked={this.state.newsletter} onChange={this.handleNewsletterChange}/>
+                  Receive our community newsletter for info about jobs and other members.
+                  <br/><small>(We'll never send you advertisements.)</small>
               </label>
             </div>
 
